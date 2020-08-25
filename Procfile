@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn vesatgo_proj.wsgi --log-file -
