@@ -26,7 +26,7 @@ SECRET_KEY = 'a#vou6rfvuq7y8&n7o$g0x!b2jn%f7)(1n!eld^ykc-y#8-7d#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'vesatgotask.herokuapp.com']
 
 
 # Application definition
