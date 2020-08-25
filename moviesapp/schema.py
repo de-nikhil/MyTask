@@ -47,14 +47,17 @@ class Query(object):
             return None
         obj = Movies.objects.filter(code_list=name)
         idlist = []
+        idmlist = []
         for x in obj:
             data = x.genre.values()
+            if x.id_movie not in idmlist:
+                idmlist.append(x.id_movie)
             for data2 in data:
                 print(data2['genre_id'])
                 if data2['genre_id'] not in idlist:
                     idlist.append(data2['genre_id'])
         print(idlist)
-        return Movies.objects.filter(genre__in=idlist).order_by('-popularity')[:10]
+        return Movies.objects.filter(genre__in=idlist).exclude(id_movie__in=idmlist).order_by('-popularity')[:10]
 
 
 class CreateCodename(graphene.Mutation):
